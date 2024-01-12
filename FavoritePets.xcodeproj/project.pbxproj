@@ -16,6 +16,7 @@
 		B4AFD72D2B4FD44F00C5DF2F /* FavoritePetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AFD72C2B4FD44F00C5DF2F /* FavoritePetsTests.swift */; };
 		B4AFD7372B4FD45000C5DF2F /* FavoritePetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AFD7362B4FD45000C5DF2F /* FavoritePetsUITests.swift */; };
 		B4AFD7392B4FD45000C5DF2F /* FavoritePetsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AFD7382B4FD45000C5DF2F /* FavoritePetsUITestsLaunchTests.swift */; };
+		B4AFD7462B504ED800C5DF2F /* tableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AFD7452B504ED800C5DF2F /* tableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B4AFD7322B4FD45000C5DF2F /* FavoritePetsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FavoritePetsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AFD7362B4FD45000C5DF2F /* FavoritePetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePetsUITests.swift; sourceTree = "<group>"; };
 		B4AFD7382B4FD45000C5DF2F /* FavoritePetsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePetsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B4AFD7452B504ED800C5DF2F /* tableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				B4AFD7152B4FD44C00C5DF2F /* AppDelegate.swift */,
 				B4AFD7172B4FD44C00C5DF2F /* SceneDelegate.swift */,
 				B4AFD7192B4FD44C00C5DF2F /* ViewController.swift */,
+				B4AFD7452B504ED800C5DF2F /* tableViewCell.swift */,
 				B4AFD71B2B4FD44C00C5DF2F /* Main.storyboard */,
 				B4AFD71E2B4FD44F00C5DF2F /* Assets.xcassets */,
 				B4AFD7202B4FD44F00C5DF2F /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4AFD71A2B4FD44C00C5DF2F /* ViewController.swift in Sources */,
+				B4AFD7462B504ED800C5DF2F /* tableViewCell.swift in Sources */,
 				B4AFD7162B4FD44C00C5DF2F /* AppDelegate.swift in Sources */,
 				B4AFD7182B4FD44C00C5DF2F /* SceneDelegate.swift in Sources */,
 			);
