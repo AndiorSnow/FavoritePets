@@ -1,0 +1,6 @@
+framework module Pods_FavoritePets_FavoritePetsUITests {
+  umbrella header "Pods-FavoritePets-FavoritePetsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
