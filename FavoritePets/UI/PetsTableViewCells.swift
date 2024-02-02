@@ -12,8 +12,14 @@ import UIKit
 class TopThreePetsCell: UITableViewCell {
     
     lazy var collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
-    lazy var viewModel: PetsViewModel = PetsViewModel()
     lazy var pageControl: UIPageControl = UIPageControl(frame: .zero)
+    var viewModel = PetsViewModel()
+    
+//    private(set) var petImages: [PetImage] = []
+//    init(viewModel: PetsViewModel) {
+//        super.init()
+//        self.viewModel = viewModel
+//    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,7 +28,7 @@ class TopThreePetsCell: UITableViewCell {
         addSubviews()
         setupCollectionView()
         setupConstraints()
-        viewModel.start()
+        viewModel.setupData()
     }
        
     required init?(coder: NSCoder) {
@@ -36,14 +42,10 @@ class TopThreePetsCell: UITableViewCell {
         let layout = UICollectionViewFlowLayout()
         let itemWidth = UIScreen.main.bounds.width
         let itemHeight = 260.0
-//        let minimumInteritemSpacing = 4.0
-//        layout.minimumInteritemSpacing = minimumInteritemSpacing
         layout.minimumLineSpacing = 0.001
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.scrollDirection = .horizontal
-//        layout.sectionInset = UIEdgeInsets(top: CGFloat(minimumInteritemSpacing), left: CGFloat(minimumInteritemSpacing), bottom: CGFloat(minimumInteritemSpacing), right: CGFloat(minimumInteritemSpacing))
-        
-//        collectionView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400)
+
         collectionView.backgroundColor = .gray
         collectionView.collectionViewLayout = layout
         collectionView.isScrollEnabled = true
@@ -54,8 +56,6 @@ class TopThreePetsCell: UITableViewCell {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-//        collectionView.tag = row
-//        collectionView.setContentOffset(collectionView.contentOffset, animated:false)
         
         pageControl.backgroundColor = UIColor.clear
         pageControl.numberOfPages = TOP_THREE
@@ -65,6 +65,7 @@ class TopThreePetsCell: UITableViewCell {
         
         self.separatorInset = UIEdgeInsets(top: 0, left: itemWidth/2, bottom: 0, right: itemWidth/2)
     }
+    
     func setupConstraints() {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -80,6 +81,10 @@ class TopThreePetsCell: UITableViewCell {
             pageControl.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
+    
+//    func setUpViewModel() {
+//        petImages = viewModel.petImages
+//    }
 }
 
 extension TopThreePetsCell: UICollectionViewDataSource {
@@ -156,7 +161,7 @@ class OtherPetsCell: UITableViewCell {
         addSubviews()
         setupCollectionView()
         setupConstraints()
-        viewModel.start()
+        viewModel.setupData()
     }
        
     required init?(coder: NSCoder) {

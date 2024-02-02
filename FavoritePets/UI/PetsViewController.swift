@@ -10,9 +10,8 @@ import UIKit
 class PetsViewController: UIViewController{
     
     private lazy var tableView = UITableView(frame: .zero)
-    var viewModel: PetsViewModel!
-    
-    var loadMoreView: UIView?
+    private lazy var loadMoreView = UIView(frame: .zero)
+    fileprivate var viewModel: PetsViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +21,7 @@ class PetsViewController: UIViewController{
         
         setupUI()
         setupConstraints()
-        viewModel.start()
+        viewModel.setupData()
     }
     
     func setupUI() {
@@ -36,6 +35,7 @@ class PetsViewController: UIViewController{
         tableView.dataSource = self
         tableView.backgroundColor = .white
         tableView.rowHeight = UITableView.automaticDimension
+        
         tableView.separatorStyle = BreedsCell.SeparatorStyle.singleLine
         tableView.separatorColor = .darkGray
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -58,18 +58,18 @@ class PetsViewController: UIViewController{
     private func setupInfiniteScrollingView() {
         loadMoreView = UIView(frame: CGRect(x:0, y: tableView.contentSize.height,
                                                  width: tableView.bounds.size.width, height: 60))
-        loadMoreView!.autoresizingMask = UIView.AutoresizingMask.flexibleWidth
-        loadMoreView!.backgroundColor = .white
+        loadMoreView.autoresizingMask = UIView.AutoresizingMask.flexibleWidth
+        loadMoreView.backgroundColor = .white
          
         let activityViewIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
         activityViewIndicator.color = UIColor.darkGray
         activityViewIndicator.startAnimating()
-        loadMoreView!.addSubview(activityViewIndicator)
+        loadMoreView.addSubview(activityViewIndicator)
         
         activityViewIndicator.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            activityViewIndicator.centerXAnchor.constraint(equalTo: loadMoreView!.centerXAnchor),
-            activityViewIndicator.centerYAnchor.constraint(equalTo: loadMoreView!.centerYAnchor)
+            activityViewIndicator.centerXAnchor.constraint(equalTo: loadMoreView.centerXAnchor),
+            activityViewIndicator.centerYAnchor.constraint(equalTo: loadMoreView.centerYAnchor)
         ])
     }
 }

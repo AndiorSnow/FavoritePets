@@ -7,12 +7,9 @@
 
 import Foundation
 
-protocol ShowsError {
-    func showError(message: String)
-}
-
-protocol PetsViewModelDelegate: AnyObject, ShowsError {
+protocol PetsViewModelDelegate: AnyObject {
     func reloadData()
+    func showError(message: String)
 }
 
 class PetsViewModel {
@@ -29,7 +26,7 @@ class PetsViewModel {
         self.nameActions = nameActions
     }
 
-    func start() {
+    func setupData() {
         fetchImages()
         fetchNames()
     }

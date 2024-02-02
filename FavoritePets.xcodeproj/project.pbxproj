@@ -144,6 +144,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B49D8B3A2B5A02C80002E103 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B4B69AEB2B562DE70034C27A /* constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		B4AFD7092B4FD44C00C5DF2F = {
 			isa = PBXGroup;
 			children = (
@@ -169,15 +177,15 @@
 		B4AFD7142B4FD44C00C5DF2F /* FavoritePets */ = {
 			isa = PBXGroup;
 			children = (
-				B47197EE2B577B66005463ED /* Extensions */,
 				B4B69AF12B5673180034C27A /* API */,
 				B4B69AEE2B566D120034C27A /* UI */,
 				B4B69AED2B566CDE0034C27A /* Models */,
-				B4AFD7152B4FD44C00C5DF2F /* AppDelegate.swift */,
-				B4AFD7172B4FD44C00C5DF2F /* SceneDelegate.swift */,
-				B4B69AEB2B562DE70034C27A /* constants.swift */,
+				B47197EE2B577B66005463ED /* Extensions */,
+				B49D8B3A2B5A02C80002E103 /* Utilities */,
 				B4AFD71B2B4FD44C00C5DF2F /* Main.storyboard */,
 				B4AFD7202B4FD44F00C5DF2F /* LaunchScreen.storyboard */,
+				B4AFD7152B4FD44C00C5DF2F /* AppDelegate.swift */,
+				B4AFD7172B4FD44C00C5DF2F /* SceneDelegate.swift */,
 				B4AFD71E2B4FD44F00C5DF2F /* Assets.xcassets */,
 				B4AFD7232B4FD44F00C5DF2F /* Info.plist */,
 			);

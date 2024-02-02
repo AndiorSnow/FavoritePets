@@ -14,11 +14,10 @@ struct PetImage {
 
 extension PetImage {
     init(response: ImagesResponse) throws {
-        let id = response.id
         guard let imageURL = URL(string: response.url) else {
             throw ProcessingError.data(response.id)
         }
-        self.id = id
+        self.id = response.id
         self.imageURL = imageURL
     }
 }
@@ -30,9 +29,7 @@ struct PetName {
 
 extension PetName {
     init(response: NamesResponse) throws {
-        let id = response.id
-        let name = response.name
-        self.id = id
-        self.name = name
+        self.id = response.id
+        self.name = response.name
     }
 }
